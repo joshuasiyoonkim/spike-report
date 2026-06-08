@@ -1,56 +1,68 @@
 [
   {
-    "id": "season-2026-kickoff",
-    "title": "Why We Fight Back — Season 2026 Kickoff",
-    "description": "The season cinematic that set the tone for the year. Placeholder embed — swap in your own clips.",
-    "date": "2026-01-05",
+    "id": "jamppi-1v4-ace-masters-london",
+    "title": "Jamppi 1v4 Ace Clutch vs DRG",
+    "description": "Jamppi goes absolutely nuclear on Vitality's opening match, pulling off a 1v4 ace that had every watch party screaming.",
+    "date": "2026-06-07",
     "platform": "youtube",
-    "videoId": "AnGdzz-XWcE",
-    "tags": ["cinematic", "season-2026"]
+    "videoId": "bdUMAb1eiJE",
+    "player": "Jamppi",
+    "team": "Team Vitality",
+    "event": "Masters London",
+    "tags": ["ace", "clutch", "1v4"]
   },
   {
-    "id": "duelists-cinematic",
-    "title": "Duelists — Launch Cinematic",
-    "description": "Classic duelist showcase. A good reference for the kind of highlight reel you might post here.",
-    "date": "2025-12-18",
+    "id": "sato-ace-vs-100t",
+    "title": "Sato Insane Ace vs 100T",
+    "description": "LEV's Sato dismantles 100 Thieves with a clean ace during the Americas Kickoff. The kind of round that makes you put the controller down.",
+    "date": "2026-01-17",
     "platform": "youtube",
-    "videoId": "e_E9W2vsRbQ",
-    "tags": ["cinematic", "duelists"]
+    "videoId": "GwWERTEiH70",
+    "player": "Sato",
+    "team": "Leviatán",
+    "event": "VCT Kickoff",
+    "tags": ["ace"]
   },
   {
-    "id": "incursions-console",
-    "title": "Incursions — Console Cinematic",
-    "description": "Console-focused trailer. Replace with your own clutch or ace clips.",
-    "date": "2025-11-30",
+    "id": "memorable-plays-santiago",
+    "title": "15 Memorable Plays from Masters Santiago",
+    "description": "The official rundown of the best plays from the first global event of the year. Clutches, aces, and moments that defined the tournament.",
+    "date": "2026-03-20",
     "platform": "youtube",
-    "videoId": "6nKzziP2lxw",
-    "tags": ["cinematic", "console"]
+    "videoId": "VJQ7MuLhSOY",
+    "event": "Masters Santiago",
+    "tags": ["highlights", "official"]
   },
   {
-    "id": "duality-lore",
-    "title": "Duality — Lore Cinematic",
-    "description": "One for the lore heads. Sample embed for the starter site.",
-    "date": "2025-10-22",
+    "id": "top-vct-plays-santiago",
+    "title": "Top VCT Plays of Masters Santiago",
+    "description": "The plays that mattered most from Santiago. If you missed the tournament, start here.",
+    "date": "2026-03-17",
     "platform": "youtube",
-    "videoId": "-M_r8MKQ3mo",
-    "tags": ["lore", "cinematic"]
+    "videoId": "wFk3LR1Lhgo",
+    "event": "Masters Santiago",
+    "tags": ["highlights"]
   },
   {
-    "id": "retake-episode-2",
-    "title": "Retake — Episode 2 Cinematic",
-    "description": "An older cinematic kept here as a placeholder. Drop in your real montage.",
-    "date": "2025-09-14",
+    "id": "zmjjkk-clutch-ace-xlg",
+    "title": "ZmjjKK Crazy Clutch & Ace vs XLG",
+    "description": "EDG's ZmjjKK wins back-to-back rounds with a clutch and an ace in the same series. CN built different.",
+    "date": "2026-02-10",
     "platform": "youtube",
-    "videoId": "KzQ488-aVDQ",
-    "tags": ["cinematic", "throwback"]
+    "videoId": "qFylLCrQeBI",
+    "player": "ZmjjKK",
+    "team": "EDG",
+    "event": "VCT CN Kickoff",
+    "tags": ["clutch", "ace"]
   },
   {
-    "id": "launch-cinematic",
-    "title": "The Original Launch Cinematic",
-    "description": "Where it all started. Use this slot for your favorite recent play.",
-    "date": "2025-08-02",
+    "id": "first-ace-vct-2026",
+    "title": "The First Ace of VCT 2026",
+    "description": "Someone had to be first. This is the opening ace of the entire 2026 competitive season.",
+    "date": "2026-01-10",
     "platform": "youtube",
-    "videoId": "lWr6dhTcu-E",
-    "tags": ["cinematic", "throwback"]
+    "videoId": "xIoe5XvsZL8",
+    "event": "VCT Kickoff",
+    "tags": ["ace", "historic"]
   }
 ]

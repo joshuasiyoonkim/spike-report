@@ -36,8 +36,8 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
               SpikeReport is where I break down patch notes, track the pro
-              circuit, review skins, and post the gameplay clips I can&apos;t stop
-              watching.
+              circuit, review skins, and curate the best plays from VCT
+              tournaments.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/articles" className="btn-primary">
@@ -95,8 +95,8 @@ export default function HomePage() {
         <section className="py-14 sm:py-16">
           <Container>
             <SectionHeading
-              eyebrow="From the server"
-              title="Recent clips"
+              eyebrow="From the pro scene"
+              title="Notable clips"
               href="/clips"
             />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

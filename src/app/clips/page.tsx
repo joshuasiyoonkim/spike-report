@@ -5,7 +5,7 @@ import { getAllClips, getClipTags } from "@/lib/clips";
 
 export const metadata: Metadata = {
   title: "Clips",
-  description: "Gameplay clips worth replaying — aces, clutches, and highlights.",
+  description: "The best plays from VCT tournaments — aces, clutches, and highlights worth replaying.",
 };
 
 export default function ClipsPage() {
@@ -23,8 +23,8 @@ export default function ClipsPage() {
             Clips
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-slate-400">
-            Aces, clutches, and the plays worth a second look — pulled from my
-            own games and around the scene.
+            The best plays from VCT tournaments — aces, clutches, and the
+            moments that defined the event.
           </p>
         </header>
 

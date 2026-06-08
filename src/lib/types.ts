@@ -36,4 +36,10 @@ export interface Clip {
   /** YouTube video id, e.g. "dQw4w9WgXcQ" */
   videoId: string;
   tags?: string[];
+  /** Player who made the play */
+  player?: string;
+  /** Team the player was on */
+  team?: string;
+  /** Tournament/event name */
+  event?: string;
 }

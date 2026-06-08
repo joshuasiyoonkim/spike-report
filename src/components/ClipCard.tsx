@@ -21,12 +21,24 @@ export function ClipCard({ clip }: { clip: Clip }) {
         <h3 className="font-display text-base font-semibold leading-snug text-white">
           {clip.title}
         </h3>
+        {(clip.player || clip.team) && (
+          <p className="mt-1.5 text-sm text-slate-300">
+            {clip.player && <span className="font-medium text-accent">{clip.player}</span>}
+            {clip.player && clip.team && <span className="text-slate-500"> / </span>}
+            {clip.team && <span>{clip.team}</span>}
+          </p>
+        )}
         {clip.description && (
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-400">
             {clip.description}
           </p>
         )}
         <div className="mt-4 flex flex-wrap items-center gap-2">
+          {clip.event && (
+            <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-medium text-accent ring-1 ring-inset ring-accent/25">
+              {clip.event}
+            </span>
+          )}
           <time className="text-xs text-slate-500" dateTime={clip.date}>
             {formatDate(clip.date)}
           </time>
