@@ -66,7 +66,7 @@ export default async function ArticlePage({
           <div className="mt-8 overflow-hidden rounded-xl border border-ink-700/80">
             <div className="relative aspect-video w-full bg-ink-900">
               <iframe
-                src={`https://www.youtube-nocookie.com/embed/${article.videoId}`}
+                src={`https://www.youtube-nocookie.com/embed/${article.videoId}${article.videoStart ? `?start=${article.videoStart}` : ""}`}
                 title={article.title}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

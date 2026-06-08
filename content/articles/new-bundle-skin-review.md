@@ -1,7 +1,7 @@
 ---
 title: "Skin Review: Is the New Bundle Worth Your Wallet?"
 date: "2026-06-01"
-category: "Skins"
+category: "Other"
 excerpt: "Great muzzle flash, questionable reload, and a finisher that's better in the buy menu than in a real round. The honest breakdown."
 author: "Josh"
 ---

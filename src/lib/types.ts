@@ -19,6 +19,8 @@ export interface ArticleMeta {
   coverImage?: string;
   /** Optional YouTube video ID to embed at the top of the article */
   videoId?: string;
+  /** Optional start time in seconds for the embedded video */
+  videoStart?: number;
 }
 
 export interface Article extends ArticleMeta {

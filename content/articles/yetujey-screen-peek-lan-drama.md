@@ -4,9 +4,12 @@ date: "2026-06-08"
 category: "Drama"
 excerpt: "Derke went to Twitter about Yetujey reading his mouse at LAN. Here's why I think it's fair game."
 author: "Josh"
+videoId: "4rreEksGq58"
+videoStart: 4200
+coverImage: "https://owcdn.net/img/697ab948ca75e.png"
 ---
 
-During Vitality's match at Masters London today, Yetujey wins a 1v1 post-plant on Fracture and immediately gestures across the stage, basically calling out that he was watching Derke's mouse to know if he'd defuse or swing. Derke went to Twitter. "Cheatujey" is trending on VLR. You know how it goes.
+During Vitality's match at Masters London today, Yetujey wins a 1v1 post-plant on Fracture and immediately gestures across the stage, basically calling out that he was watching Derke's mouse to know if he'd defuse or swing. The play happens at 1:10:00 in the video above. Derke went to Twitter. "Cheatujey" is trending on VLR. You know how it goes.
 
 My take: fair play.
 

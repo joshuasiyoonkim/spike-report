@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { Clip } from "@/lib/types";
-import { ClipCard } from "./ClipCard";
+import { ClipGrid } from "./ClipGrid";
 
 export function ClipsBrowser({
   clips,
@@ -47,11 +47,7 @@ export function ClipsBrowser({
       )}
 
       {visible.length > 0 ? (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {visible.map((clip) => (
-            <ClipCard key={clip.id} clip={clip} />
-          ))}
-        </div>
+        <ClipGrid clips={visible} />
       ) : (
         <p className="py-16 text-center text-slate-500">
           No clips with this tag yet.

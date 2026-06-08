@@ -33,13 +33,15 @@ function parseFile(slug: string): Article | null {
   return {
     slug,
     title: String(data.title ?? slug),
-    date: String(data.date ?? ""),
+    // YAML may parse a bare timestamp into a Date; normalize back to a string.
+    date: data.date instanceof Date ? data.date.toISOString() : String(data.date ?? ""),
     category: String(data.category ?? "Guides"),
     excerpt: String(data.excerpt ?? ""),
     author: String(data.author ?? "Josh"),
     featured: Boolean(data.featured),
     coverImage: data.coverImage ? String(data.coverImage) : undefined,
     videoId: data.videoId ? String(data.videoId) : undefined,
+    videoStart: data.videoStart ? Number(data.videoStart) : undefined,
     readingTime: estimateReadingTime(content),
     html,
   };
@@ -56,7 +58,7 @@ export function getAllArticles(): ArticleMeta[] {
     .map(parseFile)
     .filter((a): a is Article => a !== null)
     .map(toMeta)
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 }
 
 /** A single article with rendered HTML, or null if not found. */

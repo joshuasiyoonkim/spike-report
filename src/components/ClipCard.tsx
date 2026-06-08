@@ -1,22 +1,33 @@
 import type { Clip } from "@/lib/types";
 import { formatDate } from "@/lib/format";
 
-export function ClipCard({ clip }: { clip: Clip }) {
-  const src = `https://www.youtube-nocookie.com/embed/${clip.videoId}`;
+export function ClipCard({ clip, onOpen }: { clip: Clip; onOpen: () => void }) {
+  const thumbnail = `https://img.youtube.com/vi/${clip.videoId}/maxresdefault.jpg`;
 
   return (
-    <article className="surface overflow-hidden">
-      <div className="relative aspect-video w-full bg-ink-900">
-        <iframe
-          src={src}
-          title={clip.title}
+    <article className="group surface overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10">
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label={`Play ${clip.title}`}
+        className="relative block aspect-video w-full bg-ink-900"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={thumbnail}
+          alt=""
           loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          referrerPolicy="strict-origin-when-cross-origin"
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-      </div>
+        {/* dim + play button on hover */}
+        <span className="absolute inset-0 flex items-center justify-center bg-ink-950/30 transition-colors group-hover:bg-ink-950/50">
+          <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-ink-950/70 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-110">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 5v14l11-7z" fill="#27dabd" />
+            </svg>
+          </span>
+        </span>
+      </button>
       <div className="p-5">
         <h3 className="font-display text-base font-semibold leading-snug text-white">
           {clip.title}

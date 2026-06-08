@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ArticleCard, FeaturedArticleCard } from "@/components/ArticleCard";
-import { ClipCard } from "@/components/ClipCard";
+import { ClipGrid } from "@/components/ClipGrid";
 import { CategoryTag } from "@/components/CategoryTag";
 import {
   getAllArticles,
@@ -99,11 +99,7 @@ export default function HomePage() {
               title="Notable clips"
               href="/clips"
             />
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {clips.map((clip) => (
-                <ClipCard key={clip.id} clip={clip} />
-              ))}
-            </div>
+            <ClipGrid clips={clips} />
           </Container>
         </section>
       )}

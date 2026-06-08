@@ -1,7 +1,7 @@
 ---
 title: "Climbing Out of Silver: Five Habits That Actually Move Rank"
 date: "2026-05-12"
-category: "Guides"
+category: "Other"
 excerpt: "Forget aim routines for a second. The fastest gains in low elo come from boring fundamentals nobody wants to hear about."
 author: "Josh"
 ---
