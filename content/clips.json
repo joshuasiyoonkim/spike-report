@@ -1,0 +1,56 @@
+[
+  {
+    "id": "season-2026-kickoff",
+    "title": "Why We Fight Back — Season 2026 Kickoff",
+    "description": "The season cinematic that set the tone for the year. Placeholder embed — swap in your own clips.",
+    "date": "2026-01-05",
+    "platform": "youtube",
+    "videoId": "AnGdzz-XWcE",
+    "tags": ["cinematic", "season-2026"]
+  },
+  {
+    "id": "duelists-cinematic",
+    "title": "Duelists — Launch Cinematic",
+    "description": "Classic duelist showcase. A good reference for the kind of highlight reel you might post here.",
+    "date": "2025-12-18",
+    "platform": "youtube",
+    "videoId": "e_E9W2vsRbQ",
+    "tags": ["cinematic", "duelists"]
+  },
+  {
+    "id": "incursions-console",
+    "title": "Incursions — Console Cinematic",
+    "description": "Console-focused trailer. Replace with your own clutch or ace clips.",
+    "date": "2025-11-30",
+    "platform": "youtube",
+    "videoId": "6nKzziP2lxw",
+    "tags": ["cinematic", "console"]
+  },
+  {
+    "id": "duality-lore",
+    "title": "Duality — Lore Cinematic",
+    "description": "One for the lore heads. Sample embed for the starter site.",
+    "date": "2025-10-22",
+    "platform": "youtube",
+    "videoId": "-M_r8MKQ3mo",
+    "tags": ["lore", "cinematic"]
+  },
+  {
+    "id": "retake-episode-2",
+    "title": "Retake — Episode 2 Cinematic",
+    "description": "An older cinematic kept here as a placeholder. Drop in your real montage.",
+    "date": "2025-09-14",
+    "platform": "youtube",
+    "videoId": "KzQ488-aVDQ",
+    "tags": ["cinematic", "throwback"]
+  },
+  {
+    "id": "launch-cinematic",
+    "title": "The Original Launch Cinematic",
+    "description": "Where it all started. Use this slot for your favorite recent play.",
+    "date": "2025-08-02",
+    "platform": "youtube",
+    "videoId": "lWr6dhTcu-E",
+    "tags": ["cinematic", "throwback"]
+  }
+]
