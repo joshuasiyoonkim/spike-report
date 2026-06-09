@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import type { Article, ArticleMeta } from "./types";
+import { CATEGORIES, type Article, type ArticleMeta, type CategoryName } from "./types";
 
 const ARTICLES_DIR = path.join(process.cwd(), "content", "articles");
 
@@ -13,11 +13,19 @@ function estimateReadingTime(markdown: string): number {
   return Math.max(1, Math.round(words / 200));
 }
 
+/** Coerce frontmatter to a known category; anything unrecognized becomes "Opinion". */
+function normalizeCategory(value: unknown): CategoryName {
+  const name = String(value ?? "");
+  return (CATEGORIES as readonly string[]).includes(name)
+    ? (name as CategoryName)
+    : "Opinion";
+}
+
 function readSlugs(): string[] {
   if (!fs.existsSync(ARTICLES_DIR)) return [];
   return fs
     .readdirSync(ARTICLES_DIR)
-    .filter((file) => file.endsWith(".md"))
+    .filter((file) => file.endsWith(".md") && file !== "CLAUDE.md")
     .map((file) => file.replace(/\.md$/, ""));
 }
 
@@ -35,7 +43,7 @@ function parseFile(slug: string): Article | null {
     title: String(data.title ?? slug),
     // YAML may parse a bare timestamp into a Date; normalize back to a string.
     date: data.date instanceof Date ? data.date.toISOString() : String(data.date ?? ""),
-    category: String(data.category ?? "Guides"),
+    category: normalizeCategory(data.category),
     excerpt: String(data.excerpt ?? ""),
     author: String(data.author ?? "Josh"),
     featured: Boolean(data.featured),
@@ -72,8 +80,8 @@ export function getFeaturedArticle(): ArticleMeta | null {
   return all.find((a) => a.featured) ?? all[0] ?? null;
 }
 
-/** Distinct categories present in the content, sorted alphabetically. */
-export function getCategories(): string[] {
+/** Distinct categories present in the content, in canonical order. */
+export function getCategories(): CategoryName[] {
   const set = new Set(getAllArticles().map((a) => a.category));
-  return Array.from(set).sort();
+  return CATEGORIES.filter((c) => set.has(c));
 }

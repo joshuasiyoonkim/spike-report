@@ -8,7 +8,7 @@ All articles go in `content/articles/` as `.md` files with this frontmatter:
 ---
 title: "Title Here"
 date: "YYYY-MM-DD"
-category: "Drama" | "Patch Notes" | "Roster" | "Skin Review" | "Gameplay" | "Opinion"
+category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Gameplay" | "Opinion"
 excerpt: "One-sentence summary shown in previews."
 author: "Josh"
 videoId: "dQw4w9WgXcQ"  # optional — YouTube video ID, embeds at top of article

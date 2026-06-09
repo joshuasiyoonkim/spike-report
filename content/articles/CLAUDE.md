@@ -6,6 +6,7 @@ Keep it short and punchy. Most articles should be 300-600 words. Use `##` header
 
 Categories and when to use them:
 - **Patch Notes** — reaction to a new patch, what changed, how it feels in-game
+- **Pro Scene** — VCT event coverage, match results, tournament storylines, team analysis
 - **Roster** — pro team roster changes, pickups, drops, trade analysis
 - **Drama** — community/pro scene drama, controversy, hot takes
 - **Skin Review** — new bundle reviews, worth the VP or not
@@ -17,7 +18,7 @@ Frontmatter template:
 ---
 title: "Title Here"
 date: "YYYY-MM-DD"
-category: "Drama" | "Patch Notes" | "Roster" | "Skin Review" | "Gameplay" | "Opinion"
+category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Gameplay" | "Opinion"
 excerpt: "One-sentence summary shown in previews."
 author: "Josh"
 videoId: "youtube-id"  # optional

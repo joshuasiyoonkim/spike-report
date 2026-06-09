@@ -35,7 +35,7 @@ Create a new Markdown file in `content/articles/`. The file name becomes the URL
 ---
 title: "Your headline here"
 date: "2026-06-08"          # YYYY-MM-DD, controls ordering
-category: "Patch Notes"      # Patch Notes | Roster | Drama | Skins | Guides
+category: "Patch Notes"      # Patch Notes | Pro Scene | Roster | Drama | Skin Review | Gameplay | Opinion
 excerpt: "One or two sentences shown on cards and at the top of the article."
 author: "Josh"
 featured: true               # optional — pins it to the homepage Featured slot
@@ -46,7 +46,7 @@ Your article body in **Markdown**. Headings, lists, quotes,
 tables, and links all render automatically.
 ```
 
-Reading time is calculated automatically. New categories you invent will show up in the filters and the homepage topic list; to give a category its own accent color, add it to `STYLES` in `src/components/CategoryTag.tsx`.
+Reading time is calculated automatically. The canonical category list lives in `CATEGORIES` in `src/lib/types.ts` (the admin form and filters read from it); an unrecognized category in frontmatter falls back to "Opinion". To add a category, extend `CATEGORIES` and give it a color in `STYLES` in `src/components/CategoryTag.tsx`.
 
 ## Adding a clip
 
@@ -66,7 +66,17 @@ Edit `content/clips.json` and add an entry:
 
 `videoId` is the part after `watch?v=` in a YouTube URL.
 
-> The bundled articles and clips are placeholder content (the clips are official Valorant trailers) so the site looks populated — replace them with your own.
+## Deploying
+
+The easiest path is [Vercel](https://vercel.com) (free for personal projects):
+
+1. Push this repo to GitHub.
+2. On vercel.com, click "Add New Project" and import the repo. The defaults work — every push to `main` deploys automatically.
+3. Once you have a domain, add it in the Vercel project settings, then set the environment variable `NEXT_PUBLIC_SITE_URL` to it (e.g. `https://spikereport.gg`) and redeploy.
+
+`NEXT_PUBLIC_SITE_URL` drives the sitemap (`/sitemap.xml`), RSS feed (`/feed.xml`), robots rules, and social preview images — they all work locally without it, falling back to `http://localhost:3000`.
+
+Note: the `/admin` editor only writes files in local dev. In production it's blocked (and hidden from search engines); publish by committing markdown files and pushing.
 
 ## Customizing the look
 

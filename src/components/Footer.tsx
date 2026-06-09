@@ -27,6 +27,12 @@ export function Footer() {
           <Link href="/clips" className="text-slate-400 transition-colors hover:text-accent">
             Clips
           </Link>
+          <Link href="/about" className="text-slate-400 transition-colors hover:text-accent">
+            About
+          </Link>
+          <a href="/feed.xml" className="text-slate-400 transition-colors hover:text-accent">
+            RSS feed
+          </a>
         </nav>
       </Container>
 

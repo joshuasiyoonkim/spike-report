@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/Container";
-
-const CATEGORIES = ["Drama", "Opinion", "Pro Scene", "Patch Notes", "Roster", "Other"];
+import { CATEGORIES, type CategoryName } from "@/lib/types";
 
 const FIELD =
   "w-full rounded-lg border border-ink-700 bg-ink-900/60 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-accent/70 focus:outline-none";
@@ -21,7 +20,7 @@ type Result =
 export default function AdminPage() {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState(today());
-  const [category, setCategory] = useState(CATEGORIES[0]);
+  const [category, setCategory] = useState<CategoryName>(CATEGORIES[0]);
   const [excerpt, setExcerpt] = useState("");
   const [author, setAuthor] = useState("Josh");
   const [videoId, setVideoId] = useState("");
@@ -112,7 +111,7 @@ export default function AdminPage() {
                 id="category"
                 className={FIELD}
                 value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={(e) => setCategory(e.target.value as CategoryName)}
               >
                 {CATEGORIES.map((c) => (
                   <option key={c} value={c}>

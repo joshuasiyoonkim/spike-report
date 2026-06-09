@@ -1,16 +1,22 @@
-export type CategoryName =
-  | "Patch Notes"
-  | "Roster"
-  | "Drama"
-  | "Skins"
-  | "Guides";
+/** Canonical category list — keep in sync with content/articles/CLAUDE.md. */
+export const CATEGORIES = [
+  "Patch Notes",
+  "Pro Scene",
+  "Roster",
+  "Drama",
+  "Skin Review",
+  "Gameplay",
+  "Opinion",
+] as const;
+
+export type CategoryName = (typeof CATEGORIES)[number];
 
 export interface ArticleMeta {
   slug: string;
   title: string;
   /** ISO date, e.g. "2026-06-05" */
   date: string;
-  category: string;
+  category: CategoryName;
   excerpt: string;
   author: string;
   readingTime: number;

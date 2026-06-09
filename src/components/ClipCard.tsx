@@ -1,9 +1,8 @@
 import type { Clip } from "@/lib/types";
 import { formatDate } from "@/lib/format";
+import { YouTubeThumb } from "./YouTubeThumb";
 
 export function ClipCard({ clip, onOpen }: { clip: Clip; onOpen: () => void }) {
-  const thumbnail = `https://img.youtube.com/vi/${clip.videoId}/maxresdefault.jpg`;
-
   return (
     <article className="group surface overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10">
       <button
@@ -12,11 +11,8 @@ export function ClipCard({ clip, onOpen }: { clip: Clip; onOpen: () => void }) {
         aria-label={`Play ${clip.title}`}
         className="relative block aspect-video w-full bg-ink-900"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={thumbnail}
-          alt=""
-          loading="lazy"
+        <YouTubeThumb
+          videoId={clip.videoId}
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* dim + play button on hover */}

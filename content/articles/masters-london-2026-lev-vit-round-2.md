@@ -1,7 +1,7 @@
 ---
 title: "LEV and VIT Are the Two Teams to Watch at Masters London"
 date: "2026-06-08T16:00:00.000Z"
-category: "Opinion"
+category: "Pro Scene"
 excerpt: "After Round 1 of the Swiss Stage, Leviatán and Vitality have made their cases as the most interesting teams in the tournament."
 author: "Josh"
 videoId: "DiKoQ35dVVs"

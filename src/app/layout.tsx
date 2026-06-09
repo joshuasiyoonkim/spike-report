@@ -1,21 +1,45 @@
 import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+
+// Self-hosted via next/font: no render-blocking Google Fonts request,
+// automatic subsetting, and zero layout shift.
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://spikereport.example"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "SpikeReport — Valorant takes, rosters & clips",
     template: "%s · SpikeReport",
   },
-  description:
-    "A personal Valorant hub: patch note opinions, pro roster analysis, drama coverage, skin reviews, and gameplay clips.",
+  description: SITE_DESCRIPTION,
   openGraph: {
-    title: "SpikeReport",
+    title: SITE_NAME,
+    siteName: SITE_NAME,
     description:
       "Patch note opinions, roster analysis, drama coverage, skin reviews, and clips.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
 };
 
@@ -25,19 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen font-sans">
         <div className="flex min-h-screen flex-col">
           <Header />

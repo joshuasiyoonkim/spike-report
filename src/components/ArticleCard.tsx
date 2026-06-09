@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ArticleMeta } from "@/lib/types";
 import { formatDate } from "@/lib/format";
 import { CategoryTag, categoryGradient } from "./CategoryTag";
+import { YouTubeThumb } from "./YouTubeThumb";
 
 function CoverArt({
   category,
@@ -15,18 +16,27 @@ function CoverArt({
   videoId?: string;
   className?: string;
 }) {
-  const resolvedImage =
-    coverImage ?? (videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : undefined);
-
-  if (resolvedImage) {
+  if (coverImage) {
     return (
       <div className={`relative overflow-hidden ${className}`}>
         <Image
-          src={resolvedImage}
+          src={coverImage}
           alt={category}
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </div>
+    );
+  }
+
+  if (videoId) {
+    return (
+      <div className={`relative overflow-hidden ${className}`}>
+        <YouTubeThumb
+          videoId={videoId}
+          alt={category}
+          className="absolute inset-0 h-full w-full object-cover"
         />
       </div>
     );
