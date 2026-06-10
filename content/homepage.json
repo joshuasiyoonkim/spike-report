@@ -1,0 +1,19 @@
+{
+  "patch": {
+    "version": "10.05",
+    "take": "Small numbers on the changelog, completely different game in the server. The duelist tax is finally dead.",
+    "articleSlug": "patch-10-05-first-impressions"
+  },
+  "hotTakes": [
+    "Trades over entries. 10.05 is the best patch Riot has shipped all year.",
+    "If a screen peek decides your match, the screen peek was not the problem.",
+    "Vitality look like the only team in London that practiced against real comps."
+  ],
+  "clipOfTheWeek": "jamppi-1v4-ace-masters-london",
+  "resources": [
+    { "label": "VLR.gg", "url": "https://www.vlr.gg" },
+    { "label": "Liquipedia", "url": "https://liquipedia.net/valorant" },
+    { "label": "Patch notes", "url": "https://playvalorant.com/en-us/news/game-updates/" },
+    { "label": "r/ValorantCompetitive", "url": "https://www.reddit.com/r/ValorantCompetitive/" }
+  ]
+}
