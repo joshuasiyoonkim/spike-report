@@ -1,8 +1,8 @@
 ## Writing Articles
 
-Voice: first-person, opinionated, conversational. Write like you're talking to a friend who plays Valorant. No fluff, no filler, no formal essay tone. Never use em dashes.
+Voice: follow the Voice section in the root CLAUDE.md (distilled from Josh's real writing). First-person, verdict first, analysis routed through personal experience. No filler, no text-speak, no forced one-liners. Never use em dashes.
 
-Keep it short and punchy. Most articles should be 300-600 words. Use `##` headers to break up sections. One core take per article — don't try to cover everything.
+Keep it short. Aim for 200-350 words; if it's pushing 450, cut a section. Use `##` headers to break up sections, 2-3 max. One core take per article — don't try to cover everything.
 
 Categories and when to use them:
 - **Patch Notes** — reaction to a new patch, what changed, how it feels in-game
@@ -22,7 +22,6 @@ category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Ga
 excerpt: "One-sentence summary shown in previews."
 author: "Josh"
 videoId: "youtube-id"  # optional
-featured: true          # optional — pins to homepage featured slot
 ---
 ```
 
