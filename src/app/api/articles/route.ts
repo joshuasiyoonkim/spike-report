@@ -70,7 +70,6 @@ export async function POST(request: Request) {
     excerpt: String(excerpt ?? ""),
     author: String(author || "Josh"),
   };
-  if (body.featured) frontmatter.featured = true;
   if (body.coverImage) frontmatter.coverImage = String(body.coverImage);
   if (body.videoId) frontmatter.videoId = String(body.videoId);
 

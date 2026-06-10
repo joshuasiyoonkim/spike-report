@@ -10,6 +10,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Reserve scrollbar space so short pages don't shift the header sideways */
+    scrollbar-gutter: stable;
   }
 
   body {

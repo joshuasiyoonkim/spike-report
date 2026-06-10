@@ -4,6 +4,7 @@ date: "2026-05-12"
 category: "Gameplay"
 excerpt: "Forget aim routines for a second. The fastest gains in low elo come from boring fundamentals nobody wants to hear about."
 author: "Josh"
+videoId: "mb6jsJIN1j8"
 ---
 
 Everyone stuck in silver thinks they need better aim. Some do. Most need better *habits*. Here are the five that moved my rank the fastest when I deliberately drilled them — none of which involve buying a new mouse.

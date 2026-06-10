@@ -4,7 +4,6 @@ date: "2026-06-05"
 category: "Patch Notes"
 excerpt: "A round of targeted nerfs finally pulls the duelist tax back down to earth. Here's what's actually changed in how I'm playing the map."
 author: "Josh"
-featured: true
 ---
 
 Every few patches Riot ships a set of numbers that *look* small on the changelog and then completely reshape how a round feels. This is one of those patches. On paper it's a handful of tweaks. In practice, the opening duel doesn't carry the entire round anymore.

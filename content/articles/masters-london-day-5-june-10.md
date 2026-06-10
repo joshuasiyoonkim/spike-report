@@ -4,6 +4,7 @@ date: "2026-06-10"
 category: "Pro Scene"
 excerpt: "The reigning Valorant world champions are fighting for their Masters London lives against FUT Esports today."
 author: "Josh"
+videoId: "RQPdU6_bmk8"
 ---
 
 As you're reading this, NRG are in an elimination match at Masters London. Win, and they advance to playoffs. Lose, and the defending world champions go home before the bracket even starts.

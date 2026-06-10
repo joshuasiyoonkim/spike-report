@@ -46,7 +46,6 @@ function parseFile(slug: string): Article | null {
     category: normalizeCategory(data.category),
     excerpt: String(data.excerpt ?? ""),
     author: String(data.author ?? "Josh"),
-    featured: Boolean(data.featured),
     coverImage: data.coverImage ? String(data.coverImage) : undefined,
     videoId: data.videoId ? String(data.videoId) : undefined,
     videoStart: data.videoStart ? Number(data.videoStart) : undefined,
@@ -72,12 +71,6 @@ export function getAllArticles(): ArticleMeta[] {
 /** A single article with rendered HTML, or null if not found. */
 export function getArticleBySlug(slug: string): Article | null {
   return parseFile(slug);
-}
-
-/** The featured article if one is flagged, otherwise the most recent. */
-export function getFeaturedArticle(): ArticleMeta | null {
-  const all = getAllArticles();
-  return all.find((a) => a.featured) ?? all[0] ?? null;
 }
 
 /** Distinct categories present in the content, in canonical order. */

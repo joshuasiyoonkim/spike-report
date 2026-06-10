@@ -25,7 +25,6 @@ export default function AdminPage() {
   const [author, setAuthor] = useState("Josh");
   const [videoId, setVideoId] = useState("");
   const [coverImage, setCoverImage] = useState("");
-  const [featured, setFeatured] = useState(false);
   const [content, setContent] = useState("");
   const [saving, setSaving] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
@@ -47,7 +46,6 @@ export default function AdminPage() {
           author,
           videoId,
           coverImage,
-          featured,
           content,
         }),
       });
@@ -173,16 +171,6 @@ export default function AdminPage() {
               placeholder="/images/jett-nerf.jpg"
             />
           </div>
-
-          <label className="flex items-center gap-2 text-sm text-slate-300">
-            <input
-              type="checkbox"
-              checked={featured}
-              onChange={(e) => setFeatured(e.target.checked)}
-              className="h-4 w-4 rounded border-ink-700 bg-ink-900 accent-accent"
-            />
-            Feature this article on the homepage
-          </label>
 
           <div>
             <label className={LABEL} htmlFor="content">

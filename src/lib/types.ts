@@ -20,7 +20,6 @@ export interface ArticleMeta {
   excerpt: string;
   author: string;
   readingTime: number;
-  featured?: boolean;
   /** Optional cover image path, relative to /public (e.g. "/images/foo.jpg") */
   coverImage?: string;
   /** Optional YouTube video ID to embed at the top of the article */

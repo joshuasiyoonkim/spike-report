@@ -6,18 +6,15 @@ import { ClipGrid } from "@/components/ClipGrid";
 import { ClipOfTheWeek } from "@/components/ClipOfTheWeek";
 import { HeadlineList } from "@/components/HeadlineList";
 import { PatchWidget } from "@/components/PatchWidget";
-import { Ticker } from "@/components/Ticker";
-import { getAllArticles, getFeaturedArticle } from "@/lib/articles";
+import { getAllArticles } from "@/lib/articles";
 import { getAllClips } from "@/lib/clips";
 import { getHomepageConfig } from "@/lib/homepage";
 
 export default function HomePage() {
   const config = getHomepageConfig();
-  const featured = getFeaturedArticle();
   const allArticles = getAllArticles();
-  const latest = allArticles
-    .filter((a) => a.slug !== featured?.slug)
-    .slice(0, 3);
+  const [newest, ...rest] = allArticles;
+  const latest = rest.slice(0, 3);
 
   const allClips = getAllClips();
   const clipOfTheWeek =
@@ -28,8 +25,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Ticker articles={allArticles.slice(0, 6)} />
-
       {/* Hero — compact, with headlines and patch widget beside it */}
       <section className="border-b border-ink-700/70">
         <Container className="py-10 sm:py-14">
@@ -88,23 +83,23 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Featured */}
-      {featured && (
+      {/* Newest article, big */}
+      {newest && (
         <section className="py-12 sm:py-14">
           <Container>
-            <SectionHeading eyebrow="Don't miss" title="Featured" />
-            <FeaturedArticleCard article={featured} />
+            <SectionHeading eyebrow="Just posted" title="The latest" />
+            <FeaturedArticleCard article={newest} />
           </Container>
         </section>
       )}
 
-      {/* Latest articles */}
+      {/* More articles */}
       {latest.length > 0 && (
         <section className="py-2 sm:py-4">
           <Container>
             <SectionHeading
               eyebrow="Fresh off the keyboard"
-              title="Latest articles"
+              title="More articles"
               href="/articles"
             />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
