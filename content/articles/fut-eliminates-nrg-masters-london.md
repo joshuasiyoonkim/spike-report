@@ -25,4 +25,4 @@ For NRG, the year isn't over. Champions in Shanghai is still out there and that'
 
 For FUT, this is remarkable. Turkish team, first international event, took down the world champs in their debut. xeus and s0pp have been scary all tournament but nobody outside of the EMEA scene was sleeping on FUT like they should have been.
 
-The playoff bracket is set: Leviatán, Vitality, FUT, and Global Esports. Four teams left. I'm watching every one of these.
+The playoff bracket is set: Leviatán, Vitality, FUT, and Xi Lai Gaming join the four seeds. I'm watching every one of these.
