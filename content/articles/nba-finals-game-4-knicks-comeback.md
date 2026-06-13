@@ -1,9 +1,10 @@
 ---
 title: "The Game That Shouldn't Have Happened"
-date: "2026-06-12"
+date: "2026-06-12T23:59:00.000Z"
 category: "Opinion"
 excerpt: "The Knicks were down 27 at halftime with a 1% win probability. Then OG Anunoby tipped in the most improbable bucket in Finals history."
 author: "Josh"
+videoId: "4WzuI2GntPc"
 ---
 
 The Knicks were down 27 points at halftime. Win probability: 1%. The largest comeback in Finals history before Wednesday night was 24 points. There was no scenario where New York won this game.
