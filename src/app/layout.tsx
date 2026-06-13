@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Ticker } from "@/components/Ticker";
 import { getAllArticles } from "@/lib/articles";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 // Self-hosted via next/font: no render-blocking Google Fonts request,
 // automatic subsetting, and zero layout shift.
@@ -59,6 +60,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
