@@ -1,9 +1,10 @@
 ---
 title: "Where Masters London Stands With Five Days Left"
-date: "2026-06-16"
+date: "2026-06-16T14:00:00.000Z"
 category: "Pro Scene"
 excerpt: "PRX and EDG are in the upper bracket final. Everyone else is fighting to survive."
 author: "Josh"
+videoId: "y_2b4-2ZQog"
 ---
 
 The Swiss stage is a memory. The quarterfinals are done. Here's where the tournament actually is.
@@ -25,7 +26,3 @@ Vitality vs FUT is the one I'm watching. Vitality dropped a series to PRX but th
 ## What Matters
 
 One team comes out of the lower bracket and faces the loser of PRX vs EDG in the grand final. That lower bracket run is the whole tournament for anyone not named PRX or EDG right now. Whoever survives today has a path. That's all you need.
-
-Sources:
-- [VLR.gg Masters London 2026](https://www.vlr.gg/event/2765/valorant-masters-london-2026)
-- [Liquipedia Masters London 2026](https://liquipedia.net/valorant/VCT/2026/Stage_2/Masters)
