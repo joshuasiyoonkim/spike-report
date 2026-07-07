@@ -22,4 +22,4 @@ OG Anunoby went for six threes. Six. Brunson was Brunson — hit the dagger trip
 
 Is the series over? Knicks are up 3-1 and only one team has ever come back from that deficit. Do the Spurs have anything left after handing this one away?
 
-I don't know. But I know I'll be watching Game 5 with the same sick feeling that nothing i
+I don't know. But I know I'll be watching Game 5 with the same sick feeling that nothing is guaranteed.

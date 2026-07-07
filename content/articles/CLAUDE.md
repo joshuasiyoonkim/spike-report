@@ -17,4 +17,20 @@ Valorant categories and when to use them:
 
 Sports categories (`section: "sports"` only):
 - **NBA** — basketball takes, games, playoffs, players
-- **World Cup** — internation
+- **World Cup** — international football coverage while the tournament runs
+- **Sports Take** — any other sport or general sports opinion
+
+Frontmatter template:
+```md
+---
+title: "Title Here"
+date: "YYYY-MM-DD"
+section: "sports"  # only for sports articles; omit for Valorant
+category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Gameplay" | "Opinion" | "NBA" | "World Cup" | "Sports Take"
+excerpt: "One-sentence summary shown in previews."
+author: "Josh"
+videoId: "youtube-id"  # optional
+---
+```
+
+Filename format: `kebab-case-short-description.md` (e.g. `patch-10-05-first-impressions.md`).

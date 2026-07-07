@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { CATEGORIES, SECTION_LABELS, type Section } from "@/lib/types";
 import type { ArticleMeta } from "@/lib/types";
 import { ArticleCard } from "./ArticleCard";
@@ -15,12 +16,12 @@ const SECTION_FILTERS: { value: SectionFilter; label: string }[] = [
 
 export function ArticlesBrowser({
   articles,
-  initialSection = "all",
+  section = "all",
 }: {
   articles: ArticleMeta[];
-  initialSection?: SectionFilter;
+  section?: SectionFilter;
 }) {
-  const [section, setSection] = useState<SectionFilter>(initialSection);
+  const router = useRouter();
   const [active, setActive] = useState<string>("All");
 
   const inSection = useMemo(
@@ -45,9 +46,14 @@ export function ArticlesBrowser({
     [active, inSection]
   );
 
+  // Section changes go through the URL so the nav highlight and the page
+  // header stay in sync with the toggle.
   function switchSection(next: SectionFilter) {
-    setSection(next);
-    setActive("All"); // category list changes with the section
+    if (next === section) return;
+    router.replace(
+      next === "all" ? "/articles" : `/articles?section=${next}`,
+      { scroll: false }
+    );
   }
 
   return (

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 
@@ -14,13 +14,51 @@ const NAV = [
   { href: "/about", label: "About" },
 ];
 
-function isActive(pathname: string, href: string): boolean {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
+/**
+ * Nav links live in their own component because useSearchParams requires a
+ * Suspense boundary. The section param decides whether "Articles" or
+ * "Off the Server" gets the highlight.
+ */
+function NavLinks({
+  linkClass,
+  onNavigate,
+}: {
+  linkClass: (active: boolean) => string;
+  onNavigate?: () => void;
+}) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const sportsView = searchParams.get("section") === "sports";
+
+  function isActive(href: string): boolean {
+    if (href === "/") return pathname === "/";
+    if (href === "/articles?section=sports")
+      return pathname === "/articles" && sportsView;
+    if (href === "/articles")
+      return (
+        (pathname === "/articles" || pathname.startsWith("/articles/")) &&
+        !sportsView
+      );
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+
+  return (
+    <>
+      {NAV.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={onNavigate}
+          className={linkClass(isActive(item.href))}
+        >
+          {item.label}
+        </Link>
+      ))}
+    </>
+  );
 }
 
 export function Header() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
@@ -30,22 +68,17 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 sm:flex">
-          {NAV.map((item) => {
-            const active = isActive(pathname, item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+          <Suspense fallback={null}>
+            <NavLinks
+              linkClass={(active) =>
+                `rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   active
                     ? "bg-ink-800 text-white"
                     : "text-slate-400 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+                }`
+              }
+            />
+          </Suspense>
           <Link href="/articles" className="btn-primary ml-2">
             Latest
           </Link>
@@ -83,23 +116,18 @@ export function Header() {
       {open && (
         <div className="border-t border-ink-700/70 bg-ink-950/95 sm:hidden">
           <Container className="flex flex-col gap-1 py-3">
-            {NAV.map((item) => {
-              const active = isActive(pathname, item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={`rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+            <Suspense fallback={null}>
+              <NavLinks
+                onNavigate={() => setOpen(false)}
+                linkClass={(active) =>
+                  `rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
                     active
                       ? "bg-ink-800 text-white"
                       : "text-slate-300 hover:bg-ink-800/60 hover:text-white"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+                  }`
+                }
+              />
+            </Suspense>
           </Container>
         </div>
       )}
