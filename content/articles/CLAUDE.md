@@ -4,7 +4,9 @@ Voice: follow the Voice section in the root CLAUDE.md (distilled from Josh's rea
 
 Keep it short. Aim for 200-350 words; if it's pushing 450, cut a section. Use `##` headers to break up sections, 2-3 max. One core take per article — don't try to cover everything.
 
-Categories and when to use them:
+Sections: every article belongs to a section — `valorant` (the default, can be omitted) or `sports` (the "Off the Server" section: NBA, World Cup, anything non-Valorant). Sports articles must set `section: "sports"` explicitly.
+
+Valorant categories and when to use them:
 - **Patch Notes** — reaction to a new patch, what changed, how it feels in-game
 - **Pro Scene** — VCT event coverage, match results, tournament storylines, team analysis
 - **Roster** — pro team roster changes, pickups, drops, trade analysis
@@ -13,16 +15,6 @@ Categories and when to use them:
 - **Gameplay** — tips, guides, ranked stories, gameplay observations
 - **Opinion** — anything else that's just a take
 
-Frontmatter template:
-```md
----
-title: "Title Here"
-date: "YYYY-MM-DD"
-category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Gameplay" | "Opinion"
-excerpt: "One-sentence summary shown in previews."
-author: "Josh"
-videoId: "youtube-id"  # optional
----
-```
-
-Filename format: `kebab-case-short-description.md` (e.g. `patch-10-05-first-impressions.md`).
+Sports categories (`section: "sports"` only):
+- **NBA** — basketball takes, games, playoffs, players
+- **World Cup** — internation

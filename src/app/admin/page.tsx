@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/Container";
-import { CATEGORIES, type CategoryName } from "@/lib/types";
+import {
+  SECTIONS,
+  SECTION_LABELS,
+  SPORTS_CATEGORIES,
+  VALORANT_CATEGORIES,
+  type CategoryName,
+  type Section,
+} from "@/lib/types";
 
 const FIELD =
   "w-full rounded-lg border border-ink-700 bg-ink-900/60 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-accent/70 focus:outline-none";
@@ -20,7 +27,8 @@ type Result =
 export default function AdminPage() {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState(today());
-  const [category, setCategory] = useState<CategoryName>(CATEGORIES[0]);
+  const [section, setSection] = useState<Section>("valorant");
+  const [category, setCategory] = useState<CategoryName>(VALORANT_CATEGORIES[0]);
   const [excerpt, setExcerpt] = useState("");
   const [author, setAuthor] = useState("Josh");
   const [videoId, setVideoId] = useState("");
@@ -41,6 +49,7 @@ export default function AdminPage() {
         body: JSON.stringify({
           title,
           date,
+          section,
           category,
           excerpt,
           author,
@@ -102,6 +111,35 @@ export default function AdminPage() {
               />
             </div>
             <div>
+              <label className={LABEL} htmlFor="section">
+                Section
+              </label>
+              <select
+                id="section"
+                className={FIELD}
+                value={section}
+                onChange={(e) => {
+                  const next = e.target.value as Section;
+                  setSection(next);
+                  // Reset category to the first one in the new section.
+                  setCategory(
+                    next === "sports"
+                      ? SPORTS_CATEGORIES[0]
+                      : VALORANT_CATEGORIES[0],
+                  );
+                }}
+              >
+                {SECTIONS.map((s) => (
+                  <option key={s} value={s}>
+                    {SECTION_LABELS[s]}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div>
               <label className={LABEL} htmlFor="category">
                 Category
               </label>
@@ -111,7 +149,10 @@ export default function AdminPage() {
                 value={category}
                 onChange={(e) => setCategory(e.target.value as CategoryName)}
               >
-                {CATEGORIES.map((c) => (
+                {(section === "sports"
+                  ? SPORTS_CATEGORIES
+                  : VALORANT_CATEGORIES
+                ).map((c) => (
                   <option key={c} value={c}>
                     {c}
                   </option>

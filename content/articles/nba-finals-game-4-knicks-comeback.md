@@ -1,7 +1,8 @@
 ---
 title: "The Game That Shouldn't Have Happened"
 date: "2026-06-12T23:59:00.000Z"
-category: "Opinion"
+section: "sports"
+category: "NBA"
 excerpt: "The Knicks were down 27 at halftime with a 1% win probability. Then OG Anunoby tipped in the most improbable bucket in Finals history."
 author: "Josh"
 videoId: "4WzuI2GntPc"
@@ -21,4 +22,4 @@ OG Anunoby went for six threes. Six. Brunson was Brunson — hit the dagger trip
 
 Is the series over? Knicks are up 3-1 and only one team has ever come back from that deficit. Do the Spurs have anything left after handing this one away?
 
-I don't know. But I know I'll be watching Game 5 with the same sick feeling that nothing is guaranteed.
+I don't know. But I know I'll be watching Game 5 with the same sick feeling that nothing i

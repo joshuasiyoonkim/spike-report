@@ -2,7 +2,15 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import { CATEGORIES, type Article, type ArticleMeta, type CategoryName } from "./types";
+import {
+  CATEGORIES,
+  SECTIONS,
+  sectionForCategory,
+  type Article,
+  type ArticleMeta,
+  type CategoryName,
+  type Section,
+} from "./types";
 
 const ARTICLES_DIR = path.join(process.cwd(), "content", "articles");
 
@@ -21,6 +29,17 @@ function normalizeCategory(value: unknown): CategoryName {
     : "Opinion";
 }
 
+/**
+ * Resolve the article's section: explicit frontmatter wins, otherwise it's
+ * derived from the category (sports categories -> "sports", else "valorant").
+ */
+function normalizeSection(value: unknown, category: CategoryName): Section {
+  const name = String(value ?? "").toLowerCase();
+  return (SECTIONS as readonly string[]).includes(name)
+    ? (name as Section)
+    : sectionForCategory(category);
+}
+
 function readSlugs(): string[] {
   if (!fs.existsSync(ARTICLES_DIR)) return [];
   return fs
@@ -37,13 +56,15 @@ function parseFile(slug: string): Article | null {
   const { data, content } = matter(raw);
 
   const html = marked.parse(content) as string;
+  const category = normalizeCategory(data.category);
 
   return {
     slug,
     title: String(data.title ?? slug),
     // YAML may parse a bare timestamp into a Date; normalize back to a string.
     date: data.date instanceof Date ? data.date.toISOString() : String(data.date ?? ""),
-    category: normalizeCategory(data.category),
+    section: normalizeSection(data.section, category),
+    category,
     excerpt: String(data.excerpt ?? ""),
     author: String(data.author ?? "Josh"),
     coverImage: data.coverImage ? String(data.coverImage) : undefined,
@@ -66,6 +87,11 @@ export function getAllArticles(): ArticleMeta[] {
     .filter((a): a is Article => a !== null)
     .map(toMeta)
     .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+}
+
+/** Articles in one section, newest first (metadata only). */
+export function getArticlesBySection(section: Section): ArticleMeta[] {
+  return getAllArticles().filter((a) => a.section === section);
 }
 
 /** A single article with rendered HTML, or null if not found. */

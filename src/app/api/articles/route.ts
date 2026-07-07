@@ -70,6 +70,8 @@ export async function POST(request: Request) {
     excerpt: String(excerpt ?? ""),
     author: String(author || "Josh"),
   };
+  // Section defaults to valorant at read time, so only write it when it's sports.
+  if (body.section === "sports") frontmatter.section = "sports";
   if (body.coverImage) frontmatter.coverImage = String(body.coverImage);
   if (body.videoId) frontmatter.videoId = String(body.videoId);
 

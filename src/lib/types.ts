@@ -1,5 +1,16 @@
-/** Canonical category list — keep in sync with content/articles/CLAUDE.md. */
-export const CATEGORIES = [
+/** Top-level content sections. Valorant is the default; sports is everything else Josh watches. */
+export const SECTIONS = ["valorant", "sports"] as const;
+
+export type Section = (typeof SECTIONS)[number];
+
+/** Display labels for sections (nav, filters). */
+export const SECTION_LABELS: Record<Section, string> = {
+  valorant: "Valorant",
+  sports: "Off the Server",
+};
+
+/** Canonical category lists — keep in sync with content/articles/CLAUDE.md. */
+export const VALORANT_CATEGORIES = [
   "Patch Notes",
   "Pro Scene",
   "Roster",
@@ -9,13 +20,26 @@ export const CATEGORIES = [
   "Opinion",
 ] as const;
 
+export const SPORTS_CATEGORIES = ["NBA", "World Cup", "Sports Take"] as const;
+
+export const CATEGORIES = [...VALORANT_CATEGORIES, ...SPORTS_CATEGORIES] as const;
+
 export type CategoryName = (typeof CATEGORIES)[number];
+
+/** Which section a category belongs to. */
+export function sectionForCategory(category: CategoryName): Section {
+  return (SPORTS_CATEGORIES as readonly string[]).includes(category)
+    ? "sports"
+    : "valorant";
+}
 
 export interface ArticleMeta {
   slug: string;
   title: string;
   /** ISO date, e.g. "2026-06-05" */
   date: string;
+  /** Top-level section; derived from category if not set in frontmatter. */
+  section: Section;
   category: CategoryName;
   excerpt: string;
   author: string;

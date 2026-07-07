@@ -30,6 +30,19 @@ const STYLES: Record<string, { subtle: string; solid: string }> = {
     subtle: "bg-orange-400/10 text-orange-300 ring-1 ring-inset ring-orange-400/25",
     solid: "bg-orange-400 text-ink-950",
   },
+  // Sports section
+  NBA: {
+    subtle: "bg-teal-400/10 text-teal-300 ring-1 ring-inset ring-teal-400/25",
+    solid: "bg-teal-400 text-ink-950",
+  },
+  "World Cup": {
+    subtle: "bg-lime-400/10 text-lime-300 ring-1 ring-inset ring-lime-400/25",
+    solid: "bg-lime-400 text-ink-950",
+  },
+  "Sports Take": {
+    subtle: "bg-cyan-400/10 text-cyan-300 ring-1 ring-inset ring-cyan-400/25",
+    solid: "bg-cyan-400 text-ink-950",
+  },
 };
 
 const FALLBACK = {
@@ -73,6 +86,12 @@ export function categoryGradient(category: string): string {
       return "from-amber-500/20 via-ink-800 to-ink-900";
     case "Opinion":
       return "from-orange-500/20 via-ink-800 to-ink-900";
+    case "NBA":
+      return "from-teal-500/25 via-ink-800 to-ink-900";
+    case "World Cup":
+      return "from-lime-500/20 via-ink-800 to-ink-900";
+    case "Sports Take":
+      return "from-cyan-500/25 via-ink-800 to-ink-900";
     default:
       return "from-slate-500/20 via-ink-800 to-ink-900";
   }

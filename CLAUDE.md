@@ -1,4 +1,4 @@
-This is a Valorant content hub — a personal site for posting articles, patch note opinions, pro player roster analysis and drama coverage, skin reviews, and gameplay clips. Prioritize clean readable layouts, easy content management, and mobile-friendly design.
+This is a Valorant content hub — a personal site for posting articles, patch note opinions, pro player roster analysis and drama coverage, skin reviews, and gameplay clips. There's also a secondary "Off the Server" section for live sports takes (NBA, World Cup, etc.), but Valorant stays front and center. Prioritize clean readable layouts, easy content management, and mobile-friendly design.
 
 ## Content Format
 
@@ -8,12 +8,15 @@ All articles go in `content/articles/` as `.md` files with this frontmatter:
 ---
 title: "Title Here"
 date: "YYYY-MM-DD"
-category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Gameplay" | "Opinion"
+section: "sports"  # only for sports articles; omit for Valorant (the default)
+category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Gameplay" | "Opinion" | "NBA" | "World Cup" | "Sports Take"
 excerpt: "One-sentence summary shown in previews."
 author: "Josh"
 videoId: "dQw4w9WgXcQ"  # optional — YouTube video ID, embeds at top of article
 ---
 ```
+
+The last three categories (NBA, World Cup, Sports Take) belong to the sports section only. The section shows in the nav as "Off the Server"; the main `/articles` page shows everything with section and category filters.
 
 ## Homepage Widgets
 

@@ -6,14 +6,16 @@ import { ClipGrid } from "@/components/ClipGrid";
 import { ClipOfTheWeek } from "@/components/ClipOfTheWeek";
 import { HeadlineList } from "@/components/HeadlineList";
 import { PatchWidget } from "@/components/PatchWidget";
-import { getAllArticles } from "@/lib/articles";
+import { getArticlesBySection } from "@/lib/articles";
 import { getAllClips } from "@/lib/clips";
 import { getHomepageConfig } from "@/lib/homepage";
 
 export default function HomePage() {
   const config = getHomepageConfig();
-  const allArticles = getAllArticles();
-  const [newest, ...rest] = allArticles;
+  // The homepage stays Valorant-first; sports lives in its own strip below.
+  const valorantArticles = getArticlesBySection("valorant");
+  const sportsArticles = getArticlesBySection("sports").slice(0, 3);
+  const [newest, ...rest] = valorantArticles;
   const latest = rest.slice(0, 3);
 
   const allClips = getAllClips();
@@ -77,7 +79,7 @@ export default function HomePage() {
 
             <div className="flex flex-col gap-4">
               {config.patch && <PatchWidget patch={config.patch} />}
-              <HeadlineList articles={allArticles.slice(0, 4)} />
+              <HeadlineList articles={valorantArticles.slice(0, 4)} />
             </div>
           </div>
         </Container>
@@ -104,6 +106,24 @@ export default function HomePage() {
             />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {latest.map((article) => (
+                <ArticleCard key={article.slug} article={article} />
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Off the Server — sports takes */}
+      {sportsArticles.length > 0 && (
+        <section className="py-12 sm:py-14">
+          <Container>
+            <SectionHeading
+              eyebrow="Also watching"
+              title="Off the Server"
+              href="/articles?section=sports"
+            />
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {sportsArticles.map((article) => (
                 <ArticleCard key={article.slug} article={article} />
               ))}
             </div>
