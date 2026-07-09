@@ -1,1 +1,22 @@
-LS0tCnRpdGxlOiAiVHVybnMgT3V0IFBhdE1lbiBXYXNuJ3QgV29ya2luZyBBbG9uZSBFaXRoZXIiCmRhdGU6ICIyMDI2LTA3LTA4VDE5OjAwOjAwLjAwMFoiCmNhdGVnb3J5OiAiRHJhbWEiCmV4Y2VycHQ6ICJGcm9zVCBpcyBvZmZpY2lhbGx5IEZVTEwgU0VOU0UncyBoZWFkIGNvYWNoLCBhbmQgb24gU3Bpa2UgVGFsayBoZSBzYWlkIHRoZSBHRSBibGFtZSBkb2Vzbid0IHN0b3AgYXQgUGF0TWVuLiBFdmVyeW9uZSBhbHJlYWR5IGtub3dzIHRoZSBzZWNvbmQgbmFtZS4iCmF1dGhvcjogIkpvc2giCnZpZGVvSWQ6ICIwZzdDLU9nMHI2OCIKLS0tCgpGcm9zVCBsYW5kZWQgZXhhY3RseSB3aGVyZSBJIGZpZ3VyZWQgaGUgd291bGQuIEZVTEwgU0VOU0UgbWFkZSBpdCBvZmZpY2lhbDogaGUncyB0aGVpciBoZWFkIGNvYWNoIGZvciBQYWNpZmljIFN0YWdlIDIsIHJldW5pdGVkIHdpdGggS2lsbHVhLCBwcmltbWllLCBKaXRCb3lTLCBhbmQgQ3J3cywgdGhlIHNhbWUgZ3V5cyBoZSBidWlsdCBpbnRvIGEgdGVhbSBhdCBUQUxPTiBpbiAyMDI1LiBUaGF0IHBhcnQgaXNuJ3QgdGhlIHN0b3J5LiBDb2FjaGVzIHdpdGggaGlzIHJlY29yZCBkb24ndCBzdGF5IHVuZW1wbG95ZWQuIFRoZSBzdG9yeSBpcyB3aGF0IGhlIHNhaWQgb24gU3Bpa2UgVGFsayBvbiBoaXMgd2F5IG91dCB0aGUgZG9vci4KCiMjIE9uZSBOYW1lIElzbid0IEVub3VnaAoKSSBhbHJlYWR5IHdyb3RlIHRoYXQgdGhpcyBsb29rZWQgbGlrZSBQYXRNZW4gcHVzaGluZyBGcm9zVCBvdXQgYW5kIFBsYXRvb24gc3RlcHBpbmcgdXAgdG8ga2VlcCB0aGUgcGVhY2UuIFRhY3RpY2FsIFJhYidzIHJlcG9ydGluZyBiYWNrZWQgdGhhdCB1cCBhdCB0aGUgdGltZS4gTm93IEZyb3NUIGhpbXNlbGYgaXMgc2F5aW5nIHRoZSBzYW1lIHRoaW5nLCBidXQgd2l0aCBhbiBhZGRpdGlvbjogUGF0TWVuIHdhcyAidGhlIHN0cm9uZ2VzdCB2b2ljZSwiIG5vdCB0aGUgb25seSBvbmUuIFRoZXJlIHdhcyBzb21lb25lIGVsc2UgImVxdWFsbHkgcmVzcG9uc2libGUsIiBzb21lb25lIHdobyAiY291bGQgaGF2ZSBqdXN0IHNvbHZlZCB0aGUgcHJvYmxlbSBoaW1zZWxmLiIgSGUgZG9lc24ndCBzYXkgdGhlIG5hbWUuIEhlIGRvZXNuJ3QgaGF2ZSB0by4gVGhlIGd1eSB3aG8gZ290IHRoZSBwcm9tb3Rpb24gaXMgc2l0dGluZyByaWdodCB0aGVyZSBpbiB0aGUgc2VudGVuY2UuCgojIyBUaGUgUGFydCBUaGF0IEFjdHVhbGx5IFN0aW5ncwoKRnJvc1QgYWxzbyBzYXlzIHRoZSBmcmljdGlvbiB0cmFjZXMgYmFjayB0byBTdGFnZSAxIGZpbmFscywgYmVmb3JlIE1hc3RlcnMgTG9uZG9uIGV2ZW4gaGFwcGVuZWQsIGFuZCB0aGUgb3JnIGNob3NlIHRvIHNpdCBvbiBpdCB0aHJvdWdoIHRoZSBiaWdnZXN0IHJ1biBpbiBmcmFuY2hpc2UgaGlzdG9yeSByYXRoZXIgdGhhbiBkZWFsIHdpdGggaXQuIFRoYXQncyBub3QgYSBjb2FjaCB3aG8gY3JhY2tlZCB1bmRlciBwcmVzc3VyZS4gVGhhdCdzIGEgcHJvYmxlbSB0aGF0IGdvdCB0YWJsZWQgdHdpY2UgYW5kIHRoZW4gYmxhbWVkIG9uIHRoZSBjb2FjaCBhbnl3YXkuCgojIyBKdWx5IDIzIENpcmNsZXMgQmFjawoKR0UgcGxheXMgRlVMTCBTRU5TRSBpbiBQYWNpZmljIFN0YWdlIDIgb24gSnVseSAyMy4gRnJvc1Qgd2Fsa3MgaW4ga25vd2luZyB0aGF0IHJvc3RlciBmcm9tIHRoZSBpbnNpZGUsIGNvYWNoaW5nIGFnYWluc3QgdGhlIGV4YWN0IHBsYXllcnMgd2hvIHJlcG9ydGVkbHkgd2FudGVkIGhpbSBnb25lLiBJIHNhaWQgRnJvc3QgZ2V0cyB0byB3YXRjaCBmcm9tIHdoZXJldmVyIGhlIGxhbmRzLiBUdXJucyBvdXQgaGUgbGFuZHMgYWNyb3NzIHRoZSBtYXAgZnJvbSB0aGVtLCB3aXRoIHRoZSBzY291dGluZyByZXBvcnQgYWxyZWFkeSBtZW1vcml6ZWQuCg==
+---
+title: "Turns Out PatMen Wasn't Working Alone Either"
+date: "2026-07-08T19:00:00.000Z"
+category: "Drama"
+excerpt: "FrosT is officially FULL SENSE's head coach, and on Spike Talk he said the GE blame doesn't stop at PatMen. Everyone already knows the second name."
+author: "Josh"
+videoId: "0g7C-Og0r68"
+---
+
+FrosT landed exactly where I figured he would. FULL SENSE made it official: he's their head coach for Pacific Stage 2, reunited with Killua, primmie, JitBoyS, and Crws, the same guys he built into a team at TALON in 2025. That part isn't the story. Coaches with his record don't stay unemployed. The story is what he said on Spike Talk on his way out the door.
+
+## One Name Isn't Enough
+
+I already wrote that this looked like PatMen pushing FrosT out and Platoon stepping up to keep the peace. Tactical Rab's reporting backed that up at the time. Now FrosT himself is saying the same thing, but with an addition: PatMen was "the strongest voice," not the only one. There was someone else "equally responsible," someone who "could have just solved the problem himself." He doesn't say the name. He doesn't have to. The guy who got the promotion is sitting right there in the sentence.
+
+## The Part That Actually Stings
+
+FrosT also says the friction traces back to Stage 1 finals, before Masters London even happened, and the org chose to sit on it through the biggest run in franchise history rather than deal with it. That's not a coach who cracked under pressure. That's a problem that got tabled twice and then blamed on the coach anyway.
+
+## July 23 Circles Back
+
+GE plays FULL SENSE in Pacific Stage 2 on July 23. FrosT walks in knowing that roster from the inside, coaching against the exact players who reportedly wanted him gone. I said Frost gets to watch from wherever he lands. Turns out he lands across the map from them, with the scouting report already memorized.
