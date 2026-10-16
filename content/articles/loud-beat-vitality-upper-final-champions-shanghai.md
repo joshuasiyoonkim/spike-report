@@ -29,4 +29,4 @@ LOUD are the first org to reach two Champions grand finals, and the youngest ros
 
 Vitality drop to the lower final, guaranteed at least third. The grand final is October 18, best of five.
 
-I picked against this LOUD team all event. I'm done doing that.
+I'm not betting against them on Sunday.
