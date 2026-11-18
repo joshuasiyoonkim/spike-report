@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { CategoryTag } from "@/components/CategoryTag";
+import { Comments } from "@/components/Comments";
 import { formatDate } from "@/lib/format";
 import { getAllArticles, getArticleBySlug } from "@/lib/articles";
 
@@ -113,6 +114,13 @@ export default async function ArticlePage({
             prose-img:rounded-xl"
           dangerouslySetInnerHTML={{ __html: article.html }}
         />
+
+        {/*
+          Client island. Keeps this page static: comments are fetched in the
+          browser after hydration, so adding an article stays "drop a .md file
+          in content/articles" with no database write.
+        */}
+        <Comments slug={slug} />
 
         <div className="mt-14 border-t border-ink-700/70 pt-6">
           <Link
