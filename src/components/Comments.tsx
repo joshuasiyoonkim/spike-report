@@ -104,7 +104,14 @@ export function Comments({ slug }: { slug: string }) {
         Comments{count > 0 && <span className="ml-2 text-slate-500">{count}</span>}
       </h2>
 
-      <CommentList comments={comments} loading={loading} error={error} />
+      <CommentList
+        comments={comments}
+        loading={loading}
+        error={error}
+        currentUserId={userId}
+        isAdmin={profile?.is_admin ?? false}
+        onChanged={() => setReloadKey((k) => k + 1)}
+      />
 
       <div className="mt-8 border-t border-ink-700/70 pt-6">
         <CommentAuthButton

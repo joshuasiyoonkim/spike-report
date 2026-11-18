@@ -7,10 +7,16 @@ export function CommentList({
   comments,
   loading,
   error,
+  currentUserId,
+  isAdmin,
+  onChanged,
 }: {
   comments: Comment[];
   loading: boolean;
   error: string | null;
+  currentUserId: string | null;
+  isAdmin: boolean;
+  onChanged: () => void;
 }) {
   if (loading) {
     return (
@@ -43,7 +49,13 @@ export function CommentList({
   return (
     <ul className="mt-4 divide-y divide-ink-700/60">
       {comments.map((comment) => (
-        <CommentItem key={comment.id} comment={comment} />
+        <CommentItem
+          key={comment.id}
+          comment={comment}
+          currentUserId={currentUserId}
+          isAdmin={isAdmin}
+          onChanged={onChanged}
+        />
       ))}
     </ul>
   );

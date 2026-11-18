@@ -69,6 +69,57 @@ export async function postComment(slug: string, body: string): Promise<void> {
 }
 
 /**
+ * Thrown when a write succeeds at the protocol level but changes nothing.
+ *
+ * Carries a `hint` so it flows through commentErrorMessage like a database
+ * error does.
+ */
+class CommentWriteError extends Error {
+  hint: string;
+  constructor(hint: string) {
+    super(hint);
+    this.name = "CommentWriteError";
+    this.hint = hint;
+  }
+}
+
+/**
+ * Edit a comment.
+ *
+ * `count: "exact"` is the important part. RLS decides which rows an UPDATE may
+ * touch, and a row it disallows is not an error -- the statement simply
+ * matches nothing and returns 200. Without asking for the count, editing
+ * someone else's comment would look like success and the UI would cheerfully
+ * show stale text. Zero rows means the policy said no.
+ */
+export async function updateComment(id: string, body: string): Promise<void> {
+  const { error, count } = await getSupabase()
+    .from("comments")
+    .update({ body }, { count: "exact" })
+    .eq("id", id);
+
+  if (error) throw error;
+  if (count === 0) throw new CommentWriteError("no_rows_matched");
+}
+
+/**
+ * Remove a comment, softly.
+ *
+ * Only deleted_at is sent, and the value does not matter: the trigger
+ * overwrites it with the server clock, records who did it, and moves the text
+ * into the private archive. Sending it is just how the intent is expressed.
+ */
+export async function removeComment(id: string): Promise<void> {
+  const { error, count } = await getSupabase()
+    .from("comments")
+    .update({ deleted_at: new Date().toISOString() }, { count: "exact" })
+    .eq("id", id);
+
+  if (error) throw error;
+  if (count === 0) throw new CommentWriteError("no_rows_matched");
+}
+
+/**
  * Database hints, mapped to something a reader can act on.
  *
  * The triggers raise with SQLSTATE PTxxx, which PostgREST turns into HTTP xxx
@@ -85,6 +136,7 @@ const HINT_MESSAGES: Record<string, string> = {
   edit_removed_forbidden: "This comment was removed, so it can't be edited.",
   undelete_forbidden: "A removed comment can't be restored.",
   admin_edit_forbidden: "Only the author can edit a comment.",
+  no_rows_matched: "That comment is no longer yours to change. Refresh the page.",
 };
 
 export function commentErrorMessage(error: unknown): string {
