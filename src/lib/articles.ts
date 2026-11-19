@@ -9,6 +9,7 @@ import {
   type Article,
   type ArticleMeta,
   type CategoryName,
+  type PatchInfo,
   type Section,
 } from "./types";
 
@@ -70,6 +71,7 @@ function parseFile(slug: string): Article | null {
     coverImage: data.coverImage ? String(data.coverImage) : undefined,
     videoId: data.videoId ? String(data.videoId) : undefined,
     videoStart: data.videoStart ? Number(data.videoStart) : undefined,
+    patchVersion: data.patchVersion ? String(data.patchVersion) : undefined,
     readingTime: estimateReadingTime(content),
     html,
   };
@@ -97,6 +99,31 @@ export function getArticlesBySection(section: Section): ArticleMeta[] {
 /** A single article with rendered HTML, or null if not found. */
 export function getArticleBySlug(slug: string): Article | null {
   return parseFile(slug);
+}
+
+/**
+ * The homepage Current patch widget, derived from the content rather than
+ * hand-maintained in homepage.json, which went stale at 10.05 while the game
+ * reached 13.10.
+ *
+ * Takes the newest "Patch Notes" article that declares a patchVersion. The
+ * declaration is required because the category also holds pieces named for
+ * what changed rather than for a version, like a map reveal or a disabled
+ * agent, and those have no patch number to show. Returns null when no article
+ * qualifies, and the homepage then renders no widget at all, which is better
+ * than showing a number nobody set.
+ */
+export function getLatestPatch(): PatchInfo | null {
+  const article = getAllArticles().find(
+    (a) => a.category === "Patch Notes" && a.patchVersion,
+  );
+  if (!article?.patchVersion) return null;
+
+  return {
+    version: article.patchVersion,
+    take: article.excerpt,
+    articleSlug: article.slug,
+  };
 }
 
 /** Distinct categories present in the content, in canonical order. */

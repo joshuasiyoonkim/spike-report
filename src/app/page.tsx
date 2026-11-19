@@ -6,12 +6,15 @@ import { ClipGrid } from "@/components/ClipGrid";
 import { ClipOfTheWeek } from "@/components/ClipOfTheWeek";
 import { HeadlineList } from "@/components/HeadlineList";
 import { PatchWidget } from "@/components/PatchWidget";
-import { getArticlesBySection } from "@/lib/articles";
+import { getArticlesBySection, getLatestPatch } from "@/lib/articles";
 import { getAllClips } from "@/lib/clips";
 import { getHomepageConfig } from "@/lib/homepage";
 
 export default function HomePage() {
   const config = getHomepageConfig();
+  // Derived from the newest Patch Notes article with a patchVersion, so
+  // publishing a patch article updates the homepage by itself.
+  const patch = getLatestPatch();
   // The homepage stays Valorant-first; sports lives in its own strip below.
   const valorantArticles = getArticlesBySection("valorant");
   const sportsArticles = getArticlesBySection("sports").slice(0, 3);
@@ -78,7 +81,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col gap-4">
-              {config.patch && <PatchWidget patch={config.patch} />}
+              {patch && <PatchWidget patch={patch} />}
               <HeadlineList articles={valorantArticles.slice(0, 4)} />
             </div>
           </div>

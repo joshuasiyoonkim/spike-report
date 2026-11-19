@@ -50,6 +50,23 @@ export interface ArticleMeta {
   videoId?: string;
   /** Optional start time in seconds for the embedded video */
   videoStart?: number;
+  /**
+   * Patch number this article covers, e.g. "13.10". Only meaningful on
+   * "Patch Notes" articles; it is what drives the homepage Current patch
+   * widget. Declared rather than parsed out of the slug, because plenty of
+   * patch articles are named for what changed rather than for a version.
+   */
+  patchVersion?: string;
+}
+
+/** Shape the homepage Current patch widget renders. */
+export interface PatchInfo {
+  /** e.g. "13.10" */
+  version: string;
+  /** One-liner shown under the version */
+  take: string;
+  /** Article the widget links to */
+  articleSlug: string;
 }
 
 export interface Article extends ArticleMeta {

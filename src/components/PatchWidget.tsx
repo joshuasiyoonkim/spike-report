@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { PatchInfo } from "@/lib/homepage";
+import type { PatchInfo } from "@/lib/types";
 
 /** Small card with the current patch number and a one-line take. */
 export function PatchWidget({ patch }: { patch: PatchInfo }) {
@@ -19,10 +19,8 @@ export function PatchWidget({ patch }: { patch: PatchInfo }) {
     </>
   );
 
-  if (!patch.articleSlug) {
-    return <div className="surface p-5">{body}</div>;
-  }
-
+  // articleSlug is always present now: the widget is derived from an article,
+  // so there is nothing to render without one.
   return (
     <Link
       href={`/articles/${patch.articleSlug}`}

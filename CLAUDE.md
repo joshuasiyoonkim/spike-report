@@ -13,6 +13,7 @@ category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Ga
 excerpt: "One-sentence summary shown in previews."
 author: "Josh"
 videoId: "dQw4w9WgXcQ"  # optional — YouTube video ID, embeds at top of article
+patchVersion: "13.10"   # optional — Patch Notes articles only; drives the homepage patch widget
 ---
 ```
 
@@ -20,9 +21,17 @@ The last three categories (NBA, World Cup, Sports Take) belong to the sports sec
 
 ## Homepage Widgets
 
-`content/homepage.json` drives the homepage extras — edit it directly, no code changes needed:
+The **Current patch** widget is not configured anywhere. It is derived from the
+newest `Patch Notes` article that sets `patchVersion` in its frontmatter, using
+that article's `excerpt` as the take and linking to it. Publish a patch article
+with a `patchVersion` and the homepage follows; set no `patchVersion` anywhere
+and the widget simply does not render. A `Patch Notes` article named for what
+changed rather than for a version (a map reveal, a disabled agent) should leave
+`patchVersion` out, so it never becomes the headline patch number.
 
-- `patch` — current patch version + one-line take, optionally linking to a patch article via `articleSlug`. Update when a new patch drops.
+`content/homepage.json` drives the rest of the homepage extras — edit it
+directly, no code changes needed:
+
 - `hotTakes` — array of short one-liner opinions shown in the hot takes strip. Keep each under ~90 characters.
 - `clipOfTheWeek` — a clip `id` from `content/clips.json` to pin as the big featured clip (falls back to the newest clip).
 - `resources` — external links (VLR, Liquipedia, etc.) shown as pills under the hero.

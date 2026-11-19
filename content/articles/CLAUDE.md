@@ -30,7 +30,14 @@ category: "Drama" | "Patch Notes" | "Pro Scene" | "Roster" | "Skin Review" | "Ga
 excerpt: "One-sentence summary shown in previews."
 author: "Josh"
 videoId: "youtube-id"  # optional
+patchVersion: "13.10"  # optional, Patch Notes only — see below
 ---
 ```
+
+On `patchVersion`: the homepage "Current patch" widget shows the newest
+`Patch Notes` article that declares one, using its excerpt as the take. Set it
+when the article is about a numbered patch. Leave it off when the article is a
+patch-adjacent piece named for what changed (a map reveal, an agent disabled
+mid-act), so it does not get promoted to the headline patch number.
 
 Filename format: `kebab-case-short-description.md` (e.g. `patch-10-05-first-impressions.md`).

@@ -3,22 +3,18 @@ import path from "node:path";
 
 const HOMEPAGE_FILE = path.join(process.cwd(), "content", "homepage.json");
 
-export interface PatchInfo {
-  /** e.g. "10.05" */
-  version: string;
-  /** One-liner opinion shown in the widget */
-  take: string;
-  /** Optional article slug the widget links to */
-  articleSlug?: string;
-}
-
 export interface ResourceLink {
   label: string;
   url: string;
 }
 
+/**
+ * Note: the Current patch widget is NOT configured here. It is derived from
+ * the newest Patch Notes article that declares a patchVersion, via
+ * getLatestPatch() in ./articles. Keeping it here meant remembering to update
+ * two places per patch, and the second one lost.
+ */
 export interface HomepageConfig {
-  patch?: PatchInfo;
   /** Short one-liner opinions shown in the hot takes strip */
   hotTakes: string[];
   /** Clip id (from content/clips.json) to pin as clip of the week */
@@ -36,7 +32,6 @@ export function getHomepageConfig(): HomepageConfig {
     fs.readFileSync(HOMEPAGE_FILE, "utf8")
   ) as Partial<HomepageConfig>;
   return {
-    patch: raw.patch,
     hotTakes: raw.hotTakes ?? [],
     clipOfTheWeek: raw.clipOfTheWeek,
     resources: raw.resources ?? [],

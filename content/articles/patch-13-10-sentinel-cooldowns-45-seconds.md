@@ -2,6 +2,7 @@
 title: "Patch 13.10 Gave Sentinels 15 Seconds Back, and That's the Whole Buff"
 date: "2026-11-16T20:10:50.000Z"
 category: "Patch Notes"
+patchVersion: "13.10"
 excerpt: "Cypher, Killjoy and Vyse get their destroyed utility back in 45 seconds instead of 60, and that small number changes how the back half of a round plays."
 author: "Josh"
 videoId: "nnVSKIHaX_I"
